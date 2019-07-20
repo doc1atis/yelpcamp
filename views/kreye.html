@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body></body>
-</html>
+<div class="container">
+  <header class="jumbotron">
+    <div class="container">
+      <h1>welcom to my OlgyCamp</h1>
+      <p>View our hand-picked campgrounds from all over the world</p>
+      <p>
+        <%# this link ask the servant to get /campgrounds/new where the form is
+        located%>
+        <a href="/campgrounds/new" class="btn btn-primary btn-large"
+          >Add A new campground</a
+        >
+      </p>
+    </div>
+  </header>
+
+  <%campgrounds.forEach((campground)=>{%>
+
+  <div class="img-thumbnail">
+    <img src="<%=campground.image%>" alt="image" />
+  </div>
+
+  <%})%>
+</div>

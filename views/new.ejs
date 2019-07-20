@@ -1,14 +1,28 @@
 <%include ./partials/header%>
-<h1>create a new campground</h1>
-<%# this form ask the servant to post /campgrounds %>
-<%# the form is found at /campgrounds/new  url with a get request %>
-<form action="/campgrounds" method="POST">
 
-<input type="text" placeholder="name" name="name" value="">
-<input type="text" placeholder="image url" name="image" value="">
-    <button type="submit">submit</button>
-</form>
+<div class="container">
+    <div class="row justify-content-center">
 
-<%# this link ask the servant to get /campgrounds %>
-<a href="/campgrounds">Go back</a>
+        <div class="col-sm-10 col-md-7 col-lg-5 text-center">
+            
+            <h3 class="mt-5">create a new campground</h3>
+            <%# this form ask the servant to post /campgrounds %>
+            <%# the form is found at /campgrounds/new  url with a get request %>
+            <form action="/campgrounds" method="POST">
+
+            <input class="form-control mb-4 mt-4" type="text" placeholder="name" name="name" value="">
+            <input class="form-control mb-4" type="text" placeholder="image url" name="image" value="">
+                <button class="btn btn-lg btn-block btn-info mb-5" type="submit">submit</button>
+            </form>
+
+            <%# this link ask the servant to get /campgrounds %>
+            <a href="/campgrounds">Go back</a>
+        </div>
+        
+
+        
+
+    </div>
+    
+</div>
 <%include ./partials/footer%>
