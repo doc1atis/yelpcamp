@@ -73,7 +73,7 @@ app.post(
     const image = req.body.image;
     //push the new object into the campgrounds array
     campgrounds.push({ name: name, image: image });
-    //redirect to the get request of /campgrounds
+    //redirect to the get request of /campgrounds  when the form is submitted
     res.redirect("/campgrounds");
   }
 );

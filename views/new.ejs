@@ -1,6 +1,6 @@
 <%include ./partials/header%>
 <h1>create a new campground</h1>
-<%# action is set to the url you want to go to when you submit the form %>
+<%# this form ask the servant to post /campgrounds %>
 <%# the form is found at /campgrounds/new  url with a get request %>
 <form action="/campgrounds" method="POST">
 
@@ -8,4 +8,7 @@
 <input type="text" placeholder="image url" name="image" value="">
     <button type="submit">submit</button>
 </form>
+
+<%# this link ask the servant to get /campgrounds %>
+<a href="/campgrounds">Go back</a>
 <%include ./partials/footer%>
