@@ -1,13 +1,12 @@
-//allow us to get the request.body object
+const express = require("express");
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
 const Campground = require("./models/campground");
 const Comment = require("./models/comment");
+const User = require("./models/user");
 
-//how to connect to mongo db
-
-const mongoose = require("mongoose");
-
-// this is a requestName(specifier) that returns a requestName (promise)
 mongoose
   .connect("mongodb://localhost/campgrounddb", { useNewUrlParser: true })
   .then(() => {
@@ -16,8 +15,6 @@ mongoose
   .catch(error => {
     console.log("could not connect to mongo db");
   });
-
-const express = require("express");
 
 app = express();
 app.use(express.static(__dirname + "/public"));
