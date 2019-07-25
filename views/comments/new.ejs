@@ -1,17 +1,20 @@
-<%include ./partials/header%>
 
+<%include ../partials/header%>
+<h1>new comment form</h1>
 <div class="container">
     <div class="row justify-content-center">
 
         <div class="col-sm-10 col-md-7 col-lg-5 text-center">
             
-            <h3 class="mt-5">create a new campground</h3>
+            <h3 class="mt-5">Add new comment to <%=campground.name%></h3>
             <%# this form ask the servant to post /campgrounds %>
             <%# the form is found at /campgrounds/new  url with a get request %>
-            <form action="/campgrounds" method="POST">
-
-            <input class="form-control mb-4 mt-4" type="text" placeholder="name" name="name" value="">
-            <input class="form-control mb-4" type="text" placeholder="image url" name="image" value="">
+            <form action="/campgrounds/<%=campground._id%>/comments" method="POST">
+            <%# name= "value" %>
+            <%# request.body.value returns the inputedText %>
+            <input class="form-control mb-4 mt-4" type="text" placeholder="text" name="comment[text]" value="">
+            <input class="form-control mb-4" type="text" placeholder="author" name="comment[author]" value="">
+            
                 <button class="btn btn-lg btn-block btn-info mb-5" type="submit">submit</button>
             </form>
 
@@ -25,4 +28,4 @@
     </div>
     
 </div>
-<%include ./partials/footer%>
+<%include ../partials/footer%>

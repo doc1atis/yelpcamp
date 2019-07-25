@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>esseye</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- main caontainer starts here -->
+    <div class="container">
+      <!-- row starts here -->
+      <div class="row">
+        <!-- group list starts here 3 columns-->
+        <div class="col-md-3" style="margin-top:90px;">
+          <p class="lead">YelpCamp</p>
+          <div class="list-group">
+            <li class="list-group-item active">Info 1</li>
+            <li class="list-group-item">Info 2</li>
+            <li class="list-group-item">Info 3</li>
+          </div>
+          <!-- group list ends here -->
+        </div>
+        <!-- picture and card container starts here 9 columns-->
+        <div class="col-md-9">
+          <!-- picture card starts here -->
+          <div class="card">
+            <img src="<%=foundcamp.image%>" class="card-img-top" alt="image" />
+            <div class="card-body">
+              <div class="imageTitle imagePrice d-flex justify-content-between">
+                <a href="#"><h3><%=foundcamp.name%>image title</h3></a>
+
+                <h2>impage price</h2>
+              </div>
+              <p class="card-text description">
+                <%=foundcamp.description%>
+              </p>
+            </div>
+            <!-- picture card ends here -->
+          </div>
+          <!-- comment card starts here -->
+          <div class="card commentCard mt-3">
+            <div class="card-body">
+              <div class="buttonHolder d-flex justify-content-end">
+                <a
+                  class="btn btn-success"
+                  href="/campgrounds/<%=foundcamp._id%>/comments/new"
+                  >Add a new Comment</a
+                >
+              </div>
+              <!-- loop will start here -->
+              <%foundcamp.comments.forEach(function(comment){%>
+              <div class="authorname date commentText">
+                <div
+                  class="authoranddateholder d-flex justify-content-between mt-3"
+                >
+                  <h3><%=comment.author%></h3>
+                  <h3>date</h3>
+                </div>
+
+                This is some comment text within a card body.
+              </div>
+              <!-- loop will end here -->
+              <%})%>
+            </div>
+            <!-- comment card ends here -->
+          </div>
+
+          <!-- picture and  card container ends here 9 columns-->
+        </div>
+
+        <!-- <%# row ends here%> -->
+      </div>
+
+      <!-- <%#  main container ends here %> -->
+    </div>
+  </body>
+</html>
